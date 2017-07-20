@@ -1,4 +1,8 @@
 language: node_js
+
+jdk:
+  - oraclejdk8
+
 node_js:
   - "7"
 
@@ -8,6 +12,7 @@ script:
   - yarn ruling
   - yarn lint
   - yarn license-check
+  - ./travis.sh
 
 cache: yarn
 

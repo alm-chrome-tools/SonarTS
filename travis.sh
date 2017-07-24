@@ -2,7 +2,7 @@
 set -euo pipefail
 
 
-if [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
+# if [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
 
 	SCANNER_VERSION=2.8
 
@@ -17,4 +17,4 @@ if [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; th
 	
 	# sonar requires JDK8
 	"./sonar-scanner/sonar-scanner-${SCANNER_VERSION}/bin/sonar-scanner"
-fi
+# fi

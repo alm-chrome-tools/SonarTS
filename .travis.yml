@@ -9,10 +9,10 @@ node_js:
 script:
   - yarn build
   - yarn test
+  - ./travis.sh
   - yarn ruling
   - yarn lint
   - yarn license-check
-  - ./travis.sh
 
 cache: yarn
 

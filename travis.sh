@@ -4,7 +4,7 @@ set -euo pipefail
 
 # if [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
 
-	SCANNER_VERSION=2.8
+	SCANNER_VERSION=cli-3.0.3.778-linux
 
 	# Download SonarScanner
 	mkdir -p sonar-scanner/download
@@ -15,6 +15,6 @@ set -euo pipefail
 	echo sonar.host.url=$SONAR_HOST_URL >> sonar-project.properties
 	echo sonar.login=$SONAR_TOKEN >> sonar-project.properties
 	
-	# sonar requires JDK8
+
 	"./sonar-scanner/sonar-scanner-${SCANNER_VERSION}/bin/sonar-scanner"
 # fi

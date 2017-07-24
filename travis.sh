@@ -11,10 +11,5 @@ set -euo pipefail
 	wget "https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-${SCANNER_VERSION}.zip" -O "sonar-scanner/download/sonar-scanner-cli-${SCANNER_VERSION}.zip"
 	unzip "sonar-scanner/download/sonar-scanner-cli-${SCANNER_VERSION}.zip" -d sonar-scanner
 
-	# complete the properties file with credentials
-	echo sonar.host.url=$SONAR_HOST_URL >> sonar-project.properties
-	echo sonar.login=$SONAR_TOKEN >> sonar-project.properties
-	
-
-	"./sonar-scanner/sonar-scanner-${SCANNER_VERSION}/bin/sonar-scanner"
+	./sonar-scanner/sonar-scanner-${SCANNER_VERSION}/bin/sonar-scanner -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_TOKEN
 # fi
